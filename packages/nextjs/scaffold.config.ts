@@ -15,7 +15,32 @@ export const DEFAULT_ALCHEMY_API_KEY = "oKxs-03sij-U_N0iOlrSsZFr29-IqbuF";
 
 const scaffoldConfig = {
   // The networks on which your DApp is live
-  targetNetworks: [chains.foundry],
+  targetNetworks: [
+    chains.foundry,
+    {
+      id: 13579,
+      name: "Intuition Testnet",
+      nativeCurrency: {
+        decimals: 18,
+        name: "Ethereum",
+        symbol: "ETH",
+      },
+      rpcUrls: {
+        default: {
+          http: ["https://testnet.rpc.intuition.systems"],
+        },
+        public: {
+          http: ["https://testnet.rpc.intuition.systems"],
+        },
+      },
+      blockExplorers: {
+        default: {
+          name: "Intuition Testnet Explorer",
+          url: "https://intuition-testnet.explorer.caldera.xyz/",
+        },
+      },
+    } as const,
+  ],
   // The interval at which your front-end polls the RPC servers for new data (it has no effect if you only target the local network (default is 4000))
   pollingInterval: 30000,
   // This is ours Alchemy's default API key.
@@ -28,6 +53,7 @@ const scaffoldConfig = {
   rpcOverrides: {
     // Example:
     // [chains.mainnet.id]: "https://mainnet.rpc.buidlguidl.com",
+    13579: "https://testnet.rpc.intuition.systems",
   },
   // This is ours WalletConnect's default project ID.
   // You can get your own at https://cloud.walletconnect.com

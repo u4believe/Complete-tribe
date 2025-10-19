@@ -26,6 +26,7 @@ scrollSepolia = "https://sepolia-rpc.scroll.io"
 scroll = "https://rpc.scroll.io"
 pgn = "https://rpc.publicgoods.network"
 pgnTestnet = "https://sepolia.publicgoods.network"
+intuitionTestnet = "https://testnet.rpc.intuition.systems"
 
 
 localhost = "http://127.0.0.1:8545"
